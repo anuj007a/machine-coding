@@ -1,0 +1,32 @@
+PubSub Library
+- Multiple producers
+    - Single channel
+- Multiple consumers
+    - Single channel
+    - different speed of consumption with sleep
+- Multi Channel
+    - can store Infinite messages
+    - Add new channels
+- Message
+    - Format : String
+    - Message ordering
+- consumers with different offset
+- At least once delivery to each consumer
+- reset index of consumptions (both forwards or backward)
+- Channels are pre created
+
+
+Entities:
+- Producer
+    - ProducerProperties
+- Consumer
+    - ConsumerProperties
+- Message
+- Channel
+- StorageEngine
+
+Utils/Services:
+- AdminUtil
+- ProducerClient
+- ConsumerClient
+- MessageRouter
