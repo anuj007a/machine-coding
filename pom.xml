@@ -7,6 +7,11 @@
     <module>todo-tracker-v1</module>
     <module>todo-tracker-v2</module>
     <module>uber-machine-coding</module>
+    <module>snake-and-ladder</module>
+    <module>LLD</module>
+    <module>LLD</module>
+    <module>splitwise</module>
+    <module>splitwise-v2</module>
 </modules>
 
     <groupId>org.anuj</groupId>
