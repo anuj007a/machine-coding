@@ -11,10 +11,11 @@
     <module>LLD</module>
     <module>LLD</module>
     <module>splitwise</module>
-    <module>splitwise-v2</module>
+    <module>tic-tac-toe</module>
+    <module>rate-limiter</module>
 </modules>
 
-    <groupId>org.anuj</groupId>
+    <groupId>com.anuj</groupId>
     <artifactId>machine-coding</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>${project.artifactId}-${project.version}</name>
