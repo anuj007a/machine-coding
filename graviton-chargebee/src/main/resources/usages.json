@@ -1,0 +1,9 @@
+{
+  "usages": [
+    {"customerId": "C1", "serviceName": "S1"},
+    {"customerId": "C1", "serviceName": "S2"},
+    {"customerId": "C1", "serviceName": "S3"},
+    {"customerId": "C1", "serviceName": "S2"},
+    {"customerId": "C2", "serviceName": "S1"}
+  ]
+}

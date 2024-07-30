@@ -1,0 +1,55 @@
+JSON File
+
+Json Lib
+GSON lib
+JSON text file to JSON Object
+
+JSON Object
+
+Input => JSON text
+
+Schema defined
+
+Output JSON Object
+
+get the data
+Set opertion ot set the
+
+
+
+Steps
+
+
+Method => Input as text path
+    Convert into JSON
+Get
+Map<String, String>
+Map<String, Int>
+
+    {
+    "name": "ANuj", => Map<String, Object>
+    "Age" : 27, => Map <String, Object>
+    "Language": [  map<String, List<Object>
+    "EN"
+    ]
+    "Address":{  => Map<String, Map <String, Object>
+    "city": "Delhi",
+    "pincode" : 110011,
+    "country":{
+    "text"}
+    }
+    }
+   jSONObject
+    .get country
+
+
+JSONObject Map
+JSONArray
+JSONEntry
+
+{
+
+
+
+}
+class <T>

@@ -19,7 +19,7 @@ public class ExpenseManager {
     public ExpenseManager() {
         expenses = new ArrayList<>();
         userMap = new HashMap<>();
-        balanceSheet = new HashMap<String, Map<String, Double>>();
+        balanceSheet = new HashMap<>();
     }
 
     public void addUser(User user) {

@@ -1,0 +1,169 @@
+1. A problem should have attributes like description, tag, difficulty level (easy, medium, hard), score.
+    How it is extensible in future?
+    Can we segregate the different department wise question
+    Department can be enum
+
+2. Get list of the problems fetchSolvedProblems
+    Implemented but not called in main class
+
+3. The recommendation strategy for problems could simply be similar tags or extensible to include other factors like
+    number of users who have solved a particular problem or a combination of factors ( Design should be extensible).
+
+    package service;
+    public interface RecommendationEngine {
+        List<Problem> recommendProblems(User user);
+    }
+
+    package service.impl;
+    public class TagBasedRecommendationEngine implements RecommendationEngine {
+        private ProblemRepository problemRepository;
+        public TagBasedRecommendationEngine(ProblemRepository problemRepository) {
+            this.problemRepository = problemRepository;
+        }
+        @Override
+        public List<Problem> recommendProblems(User user) {
+            Set<Tag> userTags = user.getSolvedProblems().stream()
+                                    .flatMap(problem -> problem.getTags().stream())
+                                    .collect(Collectors.toSet());
+            return problemRepository.getAllProblems().stream()
+                    .filter(problem -> !user.getSolvedProblems().contains(problem))
+                    .filter(problem -> problem.getTags().stream().anyMatch(userTags::contains))
+                    .collect(Collectors.toList());
+        }
+    }
+
+    package service.impl;
+    public class CompositeRecommendationEngine implements RecommendationEngine {
+        private List<RecommendationEngine> engines;
+        public CompositeRecommendationEngine(List<RecommendationEngine> engines) {
+            this.engines = engines;
+        }
+        @Override
+        public List<Problem> recommendProblems(User user) {
+            return engines.stream()
+                .flatMap(engine -> engine.recommendProblems(user).stream())
+                .distinct() // Ensure unique problems are recommended
+                .collect(Collectors.toList());
+        }
+    }
+
+    package service.impl;
+    public class PopularityBasedRecommendationEngine implements RecommendationEngine {
+        private ProblemRepository problemRepository;
+        public PopularityBasedRecommendationEngine(ProblemRepository problemRepository) {
+            this.problemRepository = problemRepository;
+        }
+        @Override
+        public List<Problem> recommendProblems(User user) {
+            return problemRepository.getAllProblems().stream()
+                    .filter(p -> !user.getSolvedProblems().contains(p))
+                    .sorted((p1, p2) -> Integer.compare(p2.getNumberOfSolvers(), p1.getNumberOfSolvers()))
+                    .limit(10) // Top 10 popular problems
+                    .collect(Collectors.toList());
+        }
+    }
+
+    // In your system initialization or configuration class
+    List<RecommendationEngine> engines = Arrays.asList(
+        new TagBasedRecommendationEngine(problemRepository),
+        new PopularityBasedRecommendationEngine(problemRepository)
+    );
+    RecommendationEngine recommendationEngine = new CompositeRecommendationEngine(engines);
+
+
+
+
+
+4. Users should be able to get curations like Top 10 most liked problems of a certain tag.
+    How can we extend this feature
+
+    public class Problem {
+        private int likes; // Track likes for each problem
+
+        public Problem(int id, String description, List<Tag> tags, String difficultyLevel, int score) {
+            this.likes = 0; // Initialize likes to 0
+        }
+    }
+
+public class ProblemRepository {
+    public List<Problem> findTopLikedProblemsByTag(Tag tag, int limit) {
+        return problems.stream()
+                .filter(p -> p.getTags().contains(tag))
+                .sorted(Comparator.comparingInt(Problem::getLikes).reversed())
+                .limit(limit)
+                .collect(Collectors.toList());
+    }
+}
+
+public interface ProblemService {
+    void likeProblem(int problemId);
+    List<Problem> getTopLikedProblemsByTag(Tag tag, int limit);
+}
+
+public class ProblemServiceImpl implements ProblemService {
+    @Override
+    public void likeProblem(int problemId) {
+        Problem problem = problemRepository.getProblemById(problemId)
+                .orElseThrow(() -> new RuntimeException("Problem not found"));
+        problem.addLike();
+    }
+
+    @Override
+    public List<Problem> getTopLikedProblemsByTag(Tag tag, int limit) {
+        return problemRepository.findTopLikedProblemsByTag(tag, limit);
+    }
+}
+
+
+
+Certainly! Here’s a detailed list of potential interview questions with answers that could be asked during an assignment evaluation round for the problem-solving system you've developed. These questions span various topics relevant to the system’s design and implementation.
+
+### 1. **Design Choices**
+**Q1:** Why did you choose a specific design pattern for your service layer?
+**A1:** I chose the Factory pattern to abstract the instantiation process of the service layer, allowing the system to adapt more easily to changes without affecting the client code. This design supports future scalability and modifications, like switching service implementations.
+
+**Q2:** Could you have used a different architectural style? Why or why not?
+**A2:** Yes, a microservices architecture could have been used to enhance scalability and resilience. However, for simplicity and given the scope, a monolithic architecture was chosen to reduce complexity and development time.
+
+**Q3:** What are the trade-offs of using a singleton pattern for the service factory?
+**A3:** The singleton pattern ensures a single instance of the service factory, which is beneficial for resource control and consistency. However, it can limit flexibility and make testing more challenging due to the global state.
+
+**Q4:** How did you decide on the structure of your packages and modules?
+**A4:** The package structure was designed to separate concerns clearly—models, services, repositories, and utilities—enhancing maintainability and clarity. This modularization also supports better testing and scalability.
+
+**Q5:** Why did you opt for dependency injection, if at all, in your service configurations?
+**A5:** Dependency injection was used to decouple class dependencies, making the system more modular and testable. It allows for easier maintenance and scalability by managing dependencies externally rather than hard-coding them inside components.
+
+### 2. **Concurrency**
+**Q1:** How is concurrency handled when multiple users access or modify the same problem data?
+**A1:** Concurrency is managed using synchronized blocks or concurrent data structures to ensure that modifications to problem statistics are thread-safe and prevent race conditions.
+
+**Q2:** What potential issues might arise from improper concurrency handling in your system?
+**A2:** Improper handling can lead to race conditions, inconsistent data states, or deadlocks, which may degrade the system's reliability and user experience.
+
+**Q3:** How do you ensure that your concurrency control doesn't lead to significant performance bottlenecks?
+**A3:** By minimizing the scope of synchronized sections and using fine-grained locks or lock-free data structures to ensure that locking mechanisms do not become bottlenecks themselves.
+
+**Q4:** Can your system handle a spike in concurrent requests efficiently?
+**A4:** Yes, the system is designed to scale horizontally by adding more instances behind a load balancer. Additionally, asynchronous processing and non-blocking I/O are considered to handle high loads efficiently.
+
+**Q5:** What tools or techniques would you use to test the concurrency aspects of your system?
+**A5:** I would use stress testing tools like JMeter or LoadRunner to simulate high concurrent access and identify bottlenecks. Profiling tools can also help in understanding thread behavior and response times under load.
+
+### 3. **Extensibility**
+**Q1:** How can new features be added to your system with minimal disruption?
+**A1:** The system uses interfaces and dependency injection, allowing new features or changes to be integrated smoothly without impacting existing functionality. Modules can be added or updated independently.
+
+**Q2:** What considerations did you take to ensure the system can evolve with future requirements?
+**A2:** The system was designed with loose coupling, high cohesion, and clear interfaces. This design ensures that components can be easily replaced or upgraded as requirements evolve.
+
+**Q3:** How would you add support for new types of problems or new scoring algorithms?
+**A3:** New problem types or scoring algorithms can be added by extending the base problem class or implementing a new scoring interface, respectively. This can be done without modifying existing code due to the use of polymorphism and abstraction.
+
+**Q4:** If a new client interface (e.g., mobile app) needed to be supported, how would your system accommodate this change?
+**A4:** The system's service layer exposes data via APIs, which can be consumed by any client interface. Adding a new client would involve building its interface to interact with these APIs.
+
+**Q5:** What part of your current implementation would you change to improve extensibility?
+**A5:** To improve extensibility, I might introduce more advanced patterns such as CQRS (Command Query Responsibility Segregation) to better separate read and write operations, facilitating easier modification and scaling of each operation type independently.
+
+These questions and answers should help in demonstrating the depth and breadth of your understanding and consideration for various critical aspects of software design and implementation during an assignment evaluation round.

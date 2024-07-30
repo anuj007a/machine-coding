@@ -1,0 +1,57 @@
+You are supposed to create a digital wallet system that allows people to transfer amounts between their wallets.
+The wallet uses its own currency known as (A₹).
+The account balance cannot drop below A₹ 0.00.
+The smallest amount that can be transferred between wallets is 0.0001.
+The user should be presented with options for each action. And the options are as follows:
+Create Wallet – This option should create a wallet for the user.
+Transfer Amount – This option should enable the transfer of funds from one account to the other.
+Account Statement – This option should display the account statement for the specified user.
+Overview – This option should display all the account numbers currently in the system. Additionally, it should show the current balances for these accounts.
+Exit – The system should exit.
+
+Create wallet
+Transfer wallet
+Account Statement
+
+
+One to one mapping of wallet for user.
+
+
+Create account
+    Input:
+        Mobile primary
+        Username
+        Name
+        email
+        Account details
+            Account number
+            Balance ₹50
+        Account statment
+             date
+             time
+             type Credit/debit
+             credit from
+             debit to
+             amount
+Transfer amount
+    From
+        Mobile
+        Account number
+    To
+        Mobile
+        Account number
+
+    Check existance of user
+    Balance in from user
+    Transfer + update the details
+
+Account statement
+    date
+    time
+    type Credit/debit
+    credit from
+    debit to
+    amount
+
+    get account
+

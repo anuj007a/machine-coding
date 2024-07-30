@@ -1,0 +1,7 @@
+{
+  "purchase": [
+    {"customerId": "C1", "packageName": "Basic"},
+    {"customerId": "C2", "packageName": "Standard"},
+    {"customerId": "C1", "packageName": "Basic"}
+  ]
+}

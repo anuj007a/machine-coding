@@ -13,6 +13,7 @@
     <module>splitwise</module>
     <module>tic-tac-toe</module>
     <module>rate-limiter</module>
+    <module>bowling-alley</module>
 </modules>
 
     <groupId>com.anuj</groupId>
