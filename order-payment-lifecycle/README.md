@@ -44,7 +44,7 @@ A highly-scalable, production-ready backend service designed to handle the compl
 
 ## 💻 Local Setup & Execution
 
-### 1. Bare Metal (H2 In-Memory)
+### 1. Local Development
 By default, the application runs on an in-memory H2 database. Perfect for quick tests and development.
 
 ```bash
