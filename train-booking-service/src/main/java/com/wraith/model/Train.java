@@ -1,8 +1,11 @@
 package com.wraith.model;
 
 import com.wraith.model.Schedule;
+import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 import java.util.List;

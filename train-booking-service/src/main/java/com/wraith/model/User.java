@@ -1,6 +1,8 @@
 package com.wraith.model;
 
 import com.wraith.entities.Role;
+import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;

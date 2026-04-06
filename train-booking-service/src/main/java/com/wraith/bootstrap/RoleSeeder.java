@@ -1,7 +1,12 @@
 package com.wraith.bootstrap;
 
 
+import com.wraith.entities.Role;
+import com.wraith.entities.RoleEnum;
 import com.wraith.repository.RoleRepository;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.Map;

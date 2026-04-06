@@ -2,6 +2,9 @@ package com.wraith.model;
 
 import com.wraith.model.Train;
 import com.wraith.model.User;
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 
 import java.time.LocalDate;
 

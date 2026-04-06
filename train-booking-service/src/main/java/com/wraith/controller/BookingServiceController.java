@@ -1,7 +1,6 @@
 package com.wraith.controller;
 
-import com.wraith.dto.BookingResponse;
-import com.wraith.dto.UserRequest;
+import com.wraith.dto.*;
 import com.wraith.entities.RoleEnum;
 import com.wraith.model.Train;
 import com.wraith.model.User;
@@ -15,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -115,7 +115,7 @@ public class BookingServiceController {
     @GetMapping("/getBookingsOnDate")
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<List<BookingResponse>> getBookingsOnDate(@RequestBody
-                                                                       BookingsOnDateRequest bookingsOnDateRequest) {
+                                                                   BookingsOnDateRequest bookingsOnDateRequest) {
         try {
             Authentication authToken = SecurityContextHolder.getContext().getAuthentication();
             String username = authToken.getName();
