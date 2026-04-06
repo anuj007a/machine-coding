@@ -14,5 +14,4 @@ public interface PaymentService {
     List<Payment> getPayments(String orderId);
     Order getOrder(String orderId);
     Map<String, Object> reconciliation(String timezone);
-
 }

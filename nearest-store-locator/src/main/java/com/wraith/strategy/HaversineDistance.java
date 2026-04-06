@@ -1,6 +1,6 @@
-package org.wraith.strategy;
+package com.wraith.strategy;
 
-import org.wraith.model.Location;
+import com.wraith.model.Location;
 
 public class HaversineDistance implements DistanceStrategy {
     private static final double R = 6371; // km

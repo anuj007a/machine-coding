@@ -1,7 +1,7 @@
-package org.wraith.service;
+package com.wraith.service;
 
-import org.wraith.model.Location;
-import org.wraith.model.Store;
+import com.wraith.model.Location;
+import com.wraith.model.Store;
 
 import java.util.List;
 

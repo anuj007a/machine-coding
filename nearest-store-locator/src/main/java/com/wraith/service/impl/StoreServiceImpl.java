@@ -1,10 +1,10 @@
-package org.wraith.service.impl;
+package com.wraith.service.impl;
 
-import org.wraith.model.Location;
-import org.wraith.model.Store;
-import org.wraith.repository.StoreRepository;
-import org.wraith.service.StoreService;
-import org.wraith.strategy.DistanceStrategy;
+import com.wraith.model.Location;
+import com.wraith.model.Store;
+import com.wraith.repository.StoreRepository;
+import com.wraith.service.StoreService;
+import com.wraith.strategy.DistanceStrategy;
 
 import java.util.ArrayList;
 import java.util.List;

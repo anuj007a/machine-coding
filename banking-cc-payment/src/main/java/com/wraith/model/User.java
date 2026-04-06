@@ -1,6 +1,4 @@
-package org.wraith.model;
-
-import org.wraith.util.IdGenerator;
+package com.wraith.model;
 
 public class User {
     private String name;

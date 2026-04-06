@@ -1,14 +1,14 @@
-package org.wraith.service.impl;
+package com.wraith.service.impl;
 
-import org.wraith.enums.TransactionType;
-import org.wraith.model.CreditCard;
-import org.wraith.model.Transaction;
-import org.wraith.model.User;
-import org.wraith.repository.CreditCardRepository;
-import org.wraith.service.CreditCardService;
-import org.wraith.strategy.InterestStrategy;
-import org.wraith.strategy.SimpleInterestStrategy;
-import org.wraith.util.IdGenerator;
+import com.wraith.enums.TransactionType;
+import com.wraith.model.CreditCard;
+import com.wraith.model.Transaction;
+import com.wraith.model.User;
+import com.wraith.repository.CreditCardRepository;
+import com.wraith.service.CreditCardService;
+import com.wraith.strategy.InterestStrategy;
+import com.wraith.strategy.SimpleInterestStrategy;
+import com.wraith.util.IdGenerator;
 
 public class CreditCardServiceImpl implements CreditCardService {
     private final CreditCardRepository repository;

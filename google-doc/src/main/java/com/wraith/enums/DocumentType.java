@@ -1,4 +1,4 @@
-package org.wraith.enums;
+package com.wraith.enums;
 
 public enum DocumentType {
     PII,

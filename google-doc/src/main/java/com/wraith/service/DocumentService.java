@@ -1,8 +1,8 @@
-package org.wraith.service;
+package com.wraith.service;
 
-import org.wraith.enums.DocumentType;
-import org.wraith.model.Document;
-import org.wraith.strategy.EditOperation;
+import com.wraith.enums.DocumentType;
+import com.wraith.model.Document;
+import com.wraith.strategy.EditOperation;
 
 import java.util.List;
 

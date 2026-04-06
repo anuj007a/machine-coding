@@ -18,7 +18,7 @@ RUN chmod +x gradlew && ./gradlew clean build -x test --no-daemon
 # Stage 2: Create the minimal runtime image
 FROM eclipse-temurin:21-jre-alpine
 
-LABEL maintainer="Payment Services Team"
+LABEL maintainer="Payment Services"
 LABEL description="Order Payment Lifecycle Management Service"
 LABEL version="1.0.0"
 

@@ -74,6 +74,16 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * Handle unmapped routes - returns 404 NOT_FOUND.
+     */
+    @ExceptionHandler({NoHandlerFoundException.class, NoResourceFoundException.class})
+    public ResponseEntity<?> handleNoHandlerFound(Exception ex) {
+        log.warn("Unmatched route: {}", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(Map.of("error", "Endpoint not found", "details", ex.getMessage()));
+    }
+
+    /**
      * Handle unexpected exceptions - returns 500 INTERNAL_SERVER_ERROR.
      * Logged as error level with full stack trace for debugging.
      * Generic error message returned to client (no sensitive info leaked).

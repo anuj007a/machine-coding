@@ -1,6 +1,4 @@
-package org.wraith.service;
-
-import org.wraith.model.CreditCard;
+package com.wraith.service;
 
 public interface CreditCardService {
     void onboardUser(String userId, String name, String email, String phoneNumber);

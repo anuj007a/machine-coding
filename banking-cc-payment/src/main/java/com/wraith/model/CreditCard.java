@@ -1,4 +1,4 @@
-package org.wraith.model;
+package com.wraith.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.wraith.util;
+package com.wraith.util;
 
 import java.security.SecureRandom;
 import java.util.HashSet;

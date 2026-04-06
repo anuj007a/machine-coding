@@ -1,4 +1,4 @@
-package org.wraith.strategy;
+package com.wraith.strategy;
 
 public class AppendOperation implements EditOperation {
     @Override

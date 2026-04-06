@@ -1,13 +1,12 @@
-package org.wraith.service.impl;
+package com.wraith.service.impl;
 
-import org.wraith.enums.DocumentType;
-import org.wraith.model.Document;
-import org.wraith.model.Version;
-import org.wraith.repository.DocumentRepository;
-import org.wraith.service.DocumentService;
-import org.wraith.strategy.EditOperation;
+import com.wraith.enums.DocumentType;
+import com.wraith.model.Document;
+import com.wraith.model.Version;
+import com.wraith.repository.DocumentRepository;
+import com.wraith.service.DocumentService;
+import com.wraith.strategy.EditOperation;
 
-import javax.print.Doc;
 import java.util.List;
 
 public class DocumentServiceImpl implements DocumentService {

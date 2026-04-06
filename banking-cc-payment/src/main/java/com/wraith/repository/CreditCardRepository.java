@@ -1,7 +1,6 @@
-package org.wraith.repository;
+package com.wraith.repository;
 
-import org.wraith.model.CreditCard;
-import org.wraith.model.User;
+import com.wraith.model.User;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

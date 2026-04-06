@@ -1,4 +1,4 @@
-package org.wraith.model;
+package com.wraith.model;
 
 public class Location {
     private final double lat;

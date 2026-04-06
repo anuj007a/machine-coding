@@ -10,7 +10,6 @@ import com.wraith.domain.model.Payment;
 import com.wraith.repository.OrderRepository;
 import com.wraith.repository.PaymentRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.wraith.idempotency.IdempotencyService;

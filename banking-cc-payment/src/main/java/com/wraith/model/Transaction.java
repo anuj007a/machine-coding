@@ -1,7 +1,7 @@
-package org.wraith.model;
+package com.wraith.model;
 
 
-import org.wraith.enums.TransactionType;
+import com.wraith.enums.TransactionType;
 
 public class Transaction {
     private final String id;

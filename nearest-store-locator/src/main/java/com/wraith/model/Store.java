@@ -1,4 +1,4 @@
-package org.wraith.model;
+package com.wraith.model;
 
 public class Store {
     private final String storeId;

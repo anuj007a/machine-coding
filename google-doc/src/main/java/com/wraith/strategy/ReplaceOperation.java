@@ -1,4 +1,4 @@
-package org.wraith.strategy;
+package com.wraith.strategy;
 
 public class ReplaceOperation implements EditOperation {
     @Override

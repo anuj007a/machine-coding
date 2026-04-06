@@ -1,4 +1,4 @@
-package org.wraith.strategy;
+package com.wraith.strategy;
 
 public class DailyInterestStrategy implements InterestStrategy {
     private static final double DAILY_RATE = 0.0005; // 0.05% daily

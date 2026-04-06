@@ -1,4 +1,4 @@
-package org.wraith.enums;
+package com.wraith.enums;
 
 public enum TransactionType {
     PAYMENT,DEBIT,CREDIT, INTEREST

@@ -1,9 +1,8 @@
-package org.wraith.model;
+package com.wraith.model;
 
-import org.wraith.enums.DocumentType;
+import com.wraith.enums.DocumentType;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantReadWriteLock;

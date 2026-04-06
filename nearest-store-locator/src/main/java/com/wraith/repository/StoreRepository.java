@@ -1,6 +1,6 @@
-package org.wraith.repository;
+package com.wraith.repository;
 
-import org.wraith.model.Store;
+import com.wraith.model.Store;
 
 import java.util.Collection;
 import java.util.HashMap;
