@@ -1,4 +1,4 @@
-package com.anuj.ratelimiter.algorithm;
+package com.wraith.ratelimiter.algorithm;
 
 public interface RateLimiter {
 

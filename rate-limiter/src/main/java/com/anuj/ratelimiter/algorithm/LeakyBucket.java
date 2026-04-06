@@ -1,8 +1,8 @@
-package com.anuj.ratelimiter.algorithm;
+package com.wraith.ratelimiter.algorithm;
 
 
 
-import com.anuj.ratelimiter.confiig.Config;
+import com.wraith.ratelimiter.confiig.Config;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

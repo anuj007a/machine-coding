@@ -1,4 +1,4 @@
-package com.anuj.ratelimiter.model;
+package com.wraith.ratelimiter.model;
 
 public class ThrottleRule {
     public long bucketSize;

@@ -11,10 +11,10 @@
     <module>splitwise</module>
     <module>tic-tac-toe</module>
     <module>rate-limiter</module>
-    <module>bowling-alley</module>
+    <module>train-bookings</module>
 </modules>
 
-    <groupId>com.anuj</groupId>
+    <groupId>com.wraith</groupId>
     <artifactId>machine-coding</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>${project.artifactId}-${project.version}</name>

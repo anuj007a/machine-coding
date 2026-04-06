@@ -1,7 +1,7 @@
-package com.anuj.ratelimiter.service;
+package com.wraith.ratelimiter.service;
 
 
-import com.anuj.ratelimiter.model.ThrottleRule;
+import com.wraith.ratelimiter.model.ThrottleRule;
 
 import java.util.HashMap;
 

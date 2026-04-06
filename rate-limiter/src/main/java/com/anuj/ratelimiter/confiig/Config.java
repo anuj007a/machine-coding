@@ -1,4 +1,4 @@
-package com.anuj.ratelimiter.confiig;
+package com.wraith.ratelimiter.confiig;
 
 public class Config {
     public static long maxBucketSize = 10;

@@ -1,8 +1,8 @@
-package com.anuj.ratelimiter.service;
+package com.wraith.ratelimiter.service;
 
-import com.anuj.ratelimiter.algorithm.RateLimiter;
-import com.anuj.ratelimiter.algorithm.TokenBucket;
-import com.anuj.ratelimiter.model.ThrottleRule;
+import com.wraith.ratelimiter.algorithm.RateLimiter;
+import com.wraith.ratelimiter.algorithm.TokenBucket;
+import com.wraith.ratelimiter.model.ThrottleRule;
 
 import java.util.HashMap;
 

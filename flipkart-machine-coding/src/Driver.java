@@ -28,9 +28,5 @@ public class Driver {
         NewsFeedSorter scoreSorter = new ScoreSorter();
 
         List<Post> posts = newsFeedService.getNewsFeedByUserId(user1.getUserId(), scoreSorter);
-
-
-
-        System.out.println("Hello world!");
     }
 }
