@@ -1,0 +1,43 @@
+# Gradle
+.gradle/
+build/
+gradle/wrapper/gradle-wrapper.jar
+
+# Git
+.git/
+.gitignore
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Documentation
+README.md
+*.md
+
+# Test files
+src/test/
+
+# Misc
+.env
+*.pid
+*.swp
+.editorconfig
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
