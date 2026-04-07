@@ -10,7 +10,11 @@ import java.time.Instant;
 @Entity
 @Table(name = "payments",
         uniqueConstraints = @UniqueConstraint(columnNames = "idempotencyKey"))
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Payment {
 
     @Id

@@ -1,0 +1,26 @@
+replicaCount: 1
+
+image:
+  repository: wallet-service
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+database:
+  host: postgres
+  port: 5432
+  name: wallet_db
+  username: postgres
+  password: postgres_Login@25
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
